@@ -64,7 +64,6 @@ async def collect_members(
         end_range:int):
 
     try:
-        empty = 0
         if await app.connect() == True:
             chat = await asyncio.create_task(validate_link(app, group))
             
@@ -77,12 +76,6 @@ async def collect_members(
                 for q in querys:
                     offset=0 
                     filter_ = raw.types.ChannelParticipantsSearch(q=q)
-
-                    if filter_.q == " ":
-                        if empty == 1:
-                            continue
-                        else:
-                            empty = 1
 
                     for i in range(start_range, end_range, 200):
                         r = await app.send(raw.functions.channels.GetParticipants(
@@ -127,9 +120,9 @@ async def collect_members(
 
 
 async def main():
-    en_char  = 'a b c d e f g h i j k l m n o p q r s t u v w x y z'
-    per_char = 'چ ج ح خ ه ع غ ف ق ث ص ض ش س ی ب ل ا ت ن م ک گ و پ د ذ ر ز ط ظ'
-    int_char = '0 1 2 3 4 5 6 7 8 9'	
+    en_char  = 'a b c d e f g h i j k l m n o p q r s t u v w x y z'.split()
+    per_char = 'چ ج ح خ ه ع غ ف ق ث ص ض ش س ی ب ل ا ت ن م ک گ و پ د ذ ر ز ط ظ'.split()
+    int_char = '0 1 2 3 4 5 6 7 8 9'.split()
 	
     query_ =  en_char + int_char + per_char
 
