@@ -3,6 +3,20 @@
 
 The latest statistics obtained:
 
->   Number of users successfully collected :‌ 117K
->  Total number of group users:‌ 150K
->  But this statistic depends on the query list
+<br />
+<br />
+
+
+> - Number of users successfully collected : 117K
+> - Total number of group users: 150K
+> - But this statistic depends on the query list
+
+<br />
+
+<br />
+
+For public group : @username
+
+For private group : full link
+
+
